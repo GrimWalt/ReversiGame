@@ -14,10 +14,12 @@ public class ReversiGame
 	 */
 	public ReversiGame()
 	{
+		// TODO think about calling a Board constructor
 		this.board = DEFAULT_BOARD ;
 		this. = ;
 	}
 
+	// TODO update comment (what is the main algorithm?)
 	/**
 	 * This method begin a game.
 	 */
