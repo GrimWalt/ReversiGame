@@ -1,6 +1,7 @@
 // TODO fix comment (ask for advice)
 /**
- * Player class with his constructor
+ * Player class with his constructor.
+ * 
  * @author grimauce
  *
  */
@@ -16,6 +17,11 @@ public class Player
 		{
 			
 			//this.Player = DEFAULT_PLAYER;
+			
+		}
+		
+		public switchPlayer()
+		{
 			
 		}
 }

@@ -14,9 +14,17 @@ public class ReversiGame
 	private Board board;
 	
 	// TODO write comment
+	/**
+	 * Create the player "Player1".
+	 * This is the white player.
+	 */
 	private Player player1;
 
 	// TODO write comment
+	/**
+	 * Create the player "Player2";
+	 * This is the black player.
+	 */
 	private Player player2;
 
 	/**
@@ -32,23 +40,36 @@ public class ReversiGame
 
 	
 
-	// TODO detail algortihm (ask for advice)
+	// TODO detail algorithm (ask for advice)
 	/**
 	 * 
-	 * This method plays the game. 
-	 * 
-	 * While the board isn't full and both players still have tokens :
-	 * 		One player Play HIS turn :
-	 * 			While the player haven't put a token:
-	 * 				If a cell is adjacent to an opponent's token and this cell is empty :
-	 * 					 	 The player can put a token on it
-	 * 				If one or more token(s) is(are) between 2 enemies tokens, this(those) token(s) is(are) wololo.  
-	 *  
+	 * This method plays the game.
+	 *
+	 *
+	 *	current player is player 1
+	 * 	While <game is not over>:
+	 * 		while (<new pawn location not valid>)
+	 * 			<ask current player for a new pawn location>
+	 *     <compute the new state of the board>
+	 *     <evaluate if game is over>
+	 *     current player changes
+	 * 					 	 
 	 *
 	 */
 	public void play()
 	{
 		// TODO Auto-generated method stub
-
-	}
+		Player currentplayer;
+		while(isGameOver() = false)
+		{
+			 
+			while(isPawnLocationValid() = false)
+			{
+				askLocation(currentPlayer);
+				
+			}
+			Board.updateBoard(board, askLocation(currentPlayer));
+			Board.isGameOver(board);
+			Player.switchPlayer();
+		    }
 }
