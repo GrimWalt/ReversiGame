@@ -1,19 +1,15 @@
-// TODO update README.md (what/who)
 /**
  * 
- * Main class which create a new ReversiGame
+ * Application that launches a Reversi game
  * @author grimauce
  *
  */
-
-// TODO write comment
 public class Main
 {
 
-	// TODO write comment
 	/**
-	 * The new Reversi game launches the "play" method 
-	 * @author grimauce
+	 * Application's main
+	 * @param args command-line arguments (unused)
 	 */
 	public static void main(String[] args)
 	{

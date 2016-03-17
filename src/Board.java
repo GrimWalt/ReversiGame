@@ -1,3 +1,4 @@
+// TODO fix comment (ask for advice)
 /**
  * Board class with his constructor 
  * @author grimauce
@@ -5,7 +6,6 @@
  */
 public class Board
 {
-
 	private static final DEFAULT_BOARD = null ;
 	
 	/**

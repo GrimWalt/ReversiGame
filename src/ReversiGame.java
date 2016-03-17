@@ -12,7 +12,11 @@ public class ReversiGame
 	 *  Board object
 	 */
 	private Board board;
+	
+	// TODO write comment
 	private Player player1;
+
+	// TODO write comment
 	private Player player2;
 
 	/**
@@ -23,16 +27,12 @@ public class ReversiGame
 	{
 		this.board = new Board();
 		this.player1 = new Player();
-		this.player2 = new Player();
-		
-		
-		// TODO think about calling a Board constructor (done)
-		
+		this.player2 = new Player();		
 	}
 
 	
 
-	// TODO update comment (what is the main algorithm?)
+	// TODO detail algortihm (ask for advice)
 	/**
 	 * 
 	 * This method plays the game. 

@@ -1,3 +1,4 @@
+// TODO fix comment (ask for advice)
 /**
  * Player class with his constructor
  * @author grimauce
