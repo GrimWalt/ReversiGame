@@ -1,13 +1,16 @@
 // TODO fix comment (ask for advice)
 /**
  * Player class with his constructor.
+ * This represents a player.
  * 
  * @author grimauce
- *
  */
 public class Player
 {
 	// TODO write comment
+	/**
+	 * This is the default configuration of the player.
+	 */
 	private static DEFAULT_PLAYER = null ;
 		
 		/**
@@ -16,11 +19,10 @@ public class Player
 		public Player()
 		{
 			
-			//this.Player = DEFAULT_PLAYER;
+			this.Player = DEFAULT_PLAYER;
 			
 		}
 
-		// TODO fix method signature
 	public switchPlayer()
 		{
 			

@@ -8,23 +8,21 @@
  */
 public class ReversiGame
 {
-	// TODO clean comment (ask for advice)
+	// TODO clean comment (ask for advice) (done)
 	/**
-	 *  Board object
+	 *  This represents the board in his default configuration.
 	 */
 	private Board board;
 	
-	// TODO clean comment (ask for advice)
+	// TODO clean comment (ask for advice)   (done)
 	/**
 	 * Create the player "Player1".
-	 * This is the white player.
 	 */
 	private Player player1;
-
-	// TODO clean comment (ask for advice)
+   
+	// TODO clean comment (ask for advice)  (done)
 	/**
-	 * Create the player "Player2";
-	 * This is the black player.
+	 * Create the player "Player2"
 	 */
 	private Player player2;
 
@@ -41,7 +39,7 @@ public class ReversiGame
 
 	
 
-	// TODO detail algorithm (ask for advice)
+	
 	/**
 	 * 
 	 * This method plays the game.
@@ -51,20 +49,19 @@ public class ReversiGame
 	 * 	While <game is not over>:
 	 * 		while (<new pawn location not valid>)
 	 * 			<ask current player for a new pawn location>
+	 *     <put the pawn>
 	 *     <compute the new state of the board>
 	 *     <evaluate if game is over>
 	 *     current player changes
-	 * 					 	 
 	 *
 	 */
 	public void play()
 	{
-		// TODO Auto-generated method stub
-		Player currentplayer;
-		while(isGameOver() = false)
+		Player currentPlayer;
+		while(!this.isGameOver())
 		{
 			 
-			while(isPawnLocationValid() = false)
+			while(!this.isPawnLocationValid())
 			{
 				askLocation(currentPlayer);
 				
@@ -74,3 +71,19 @@ public class ReversiGame
 			Player.switchPlayer();
 		    }
 }
+
+
+
+	private boolean isPawnLocationValid()
+	{
+		
+		return false;
+	}
+
+
+
+	private boolean isGameOver()
+	{
+		
+		return false;
+	}
