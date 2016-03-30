@@ -8,19 +8,20 @@
  */
 public class ReversiGame
 {
+	// TODO clean comment (ask for advice)
 	/**
 	 *  Board object
 	 */
 	private Board board;
 	
-	// TODO write comment
+	// TODO clean comment (ask for advice)
 	/**
 	 * Create the player "Player1".
 	 * This is the white player.
 	 */
 	private Player player1;
 
-	// TODO write comment
+	// TODO clean comment (ask for advice)
 	/**
 	 * Create the player "Player2";
 	 * This is the black player.

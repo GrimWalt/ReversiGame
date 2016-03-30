@@ -7,20 +7,21 @@
  */
 public class Player
 {
+	// TODO write comment
 	private static DEFAULT_PLAYER = null ;
 		
 		/**
 		 * Creates a new player, in starting configuration
-		 */
-	
+		 */	
 		public Player()
 		{
 			
 			//this.Player = DEFAULT_PLAYER;
 			
 		}
-		
-		public switchPlayer()
+
+		// TODO fix method signature
+	public switchPlayer()
 		{
 			
 		}
