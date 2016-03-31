@@ -8,23 +8,22 @@
  */
 public class ReversiGame
 {
-	// TODO clean comment (ask for advice) (done)
 	/**
-	 *  This represents the board in his default configuration.
+	 *  This represents the board.
 	 */
 	private Board board;
 	
-	// TODO clean comment (ask for advice)   (done)
+	
 	/**
-	 * Create the player "Player1".
+	 * This represents the black player.
 	 */
-	private Player player1;
+	private Player blackPlayer;
    
-	// TODO clean comment (ask for advice)  (done)
+
 	/**
-	 * Create the player "Player2"
+	 * This represents the white player
 	 */
-	private Player player2;
+	private Player whitePlayer;
 
 	/**
 	 * Creates a new Reversi game, ready to begin (board in starting configuration, 2 players)
@@ -60,13 +59,13 @@ public class ReversiGame
 		Player currentPlayer;
 		while(!this.isGameOver())
 		{
-			 
+			
 			while(!this.isPawnLocationValid())
 			{
-				askLocation(currentPlayer);
+				Player.askLocation(currentPlayer);
 				
 			}
-			Board.updateBoard(board, askLocation(currentPlayer));
+			Board.updateBoard();
 			Board.isGameOver(board);
 			Player.switchPlayer();
 		    }
@@ -76,14 +75,77 @@ public class ReversiGame
 
 	private boolean isPawnLocationValid()
 	{
-		
-		return false;
+		if(machin != Player.DEFAULT_EMPTY_CASE)
+			return false;
+		return true;
 	}
 
 
-
-	private boolean isGameOver()
+	
+	/**
+	 * Return true when the game is over (false when it continues) :
+	 * The game is over when the board is full or when a player hasn't pawns anymore on the board.
+	 * @param b
+	 * @return
+	 */
+	private boolean isGameOver(Board b)
 	{
 		
+
+		
+		
+		int i = 0;
+		int j = 0;
+		while(b[i][j] != Board.DEFAULT_BLACK_PAWN)
+			
+		{
+			for(i = 0; i <= 7; i++)
+			{
+				for(int j = 0; j <= 7; j++)
+				{
+
+				}
+			}
+			
+			return true;
+		
+			}
+		}
+	
+		
+	
+	
+		i = 0;
+		j = 0;
+		while(b[i][j] != Board.DEFAULT_WHITE_PAWN)
+		
+		{
+			for(i = 0; i <= 7; i++)
+			{
+				for(int j = 0; j <= 7; j++)
+				{
+				
+				}
+			}
+			return true;
+			
+		}
+		
 		return false;
+		
+		
+		
+		
+		/*  We will use this for equality
+		 
+		for(int i = 0; i <= 7; i++)
+		{
+			for(int j = 0; j <= 7; j++)
+			{
+				if(b[i][j] == Board.DEFAULT_EMPTY_CASE)
+					return false;
+			}
+		}
+		
+		*/
 	}

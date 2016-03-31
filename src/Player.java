@@ -7,24 +7,34 @@
  */
 public class Player
 {
-	// TODO write comment
-	/**
-	 * This is the default configuration of the player.
-	 */
-	private static DEFAULT_PLAYER = null ;
+		/**
+		 * Give a color to the player's pawns
+		 * 0 --> white
+		 * 1 --> black
+		 */
+		private boolean color;
+		
+		
 		
 		/**
-		 * Creates a new player, in starting configuration
+		 * Creates a new player, in starting configuration, ready to play
 		 */	
 		public Player()
 		{
 			
-			this.Player = DEFAULT_PLAYER;
+			this.player = DEFAULT_PLAYER;
 			
 		}
-
+		
+		
+		
+		/**
+		 * Change the player
+		 */
 	public switchPlayer()
 		{
-			
+			this.color = !this.color;
 		}
+
+	
 }

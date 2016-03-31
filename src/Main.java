@@ -6,6 +6,7 @@
  */
 public class Main
 {
+	
 	/**
 	 * Application's main
 	 * @param args command-line arguments (unused)
