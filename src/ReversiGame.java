@@ -32,8 +32,8 @@ public class ReversiGame
 	public ReversiGame()
 	{
 		this.board = new Board();
-		this.player1 = new Player();
-		this.player2 = new Player();		
+		this.blackPlayer = new Player();
+		this.whitePlayer = new Player();		
 	}
 
 	
@@ -44,41 +44,38 @@ public class ReversiGame
 	 * This method plays the game.
 	 *
 	 *
-	 *	current player is player 1
+	 *	current player is black player
 	 * 	While <game is not over>:
-	 * 		while (<new pawn location not valid>)
+	 * 		do 
 	 * 			<ask current player for a new pawn location>
+	 *     while (<new pawn location not valid>)
 	 *     <put the pawn>
 	 *     <compute the new state of the board>
 	 *     <evaluate if game is over>
-	 *     current player changes
+	 *     <current player changes>
 	 *
 	 */
 	public void play()
 	{
-		Player currentPlayer;
+		Player currentPlayer = this.blackPlayer;
+		
 		while(!this.isGameOver())
 		{
+			Location location = null;
 			
-			while(!this.isPawnLocationValid())
+			do
 			{
-				Player.askLocation(currentPlayer);
-				
+				location = currentPlayer.askLocation();
 			}
-			Board.updateBoard();
-			Board.isGameOver(board);
+			while(!this.board.isPawnLocationValid(location));
+	
+			this.board.updateBoard(location);
+			this.isGameOver();
 			Player.switchPlayer();
 		    }
 }
 
 
-
-	private boolean isPawnLocationValid()
-	{
-		if(machin != Player.DEFAULT_EMPTY_CASE)
-			return false;
-		return true;
-	}
 
 
 	
@@ -88,7 +85,7 @@ public class ReversiGame
 	 * @param b
 	 * @return
 	 */
-	private boolean isGameOver(Board b)
+	private boolean isGameOver()
 	{
 		
 
@@ -96,12 +93,12 @@ public class ReversiGame
 		
 		int i = 0;
 		int j = 0;
-		while(b[i][j] != Board.DEFAULT_BLACK_PAWN)
+		while(this.location[i][j] != Board.DEFAULT_BLACK_PAWN)
 			
 		{
 			for(i = 0; i <= 7; i++)
 			{
-				for(int j = 0; j <= 7; j++)
+				for(j = 0; j <= 7; j++)
 				{
 
 				}
@@ -109,20 +106,16 @@ public class ReversiGame
 			
 			return true;
 		
-			}
 		}
-	
-		
-	
 	
 		i = 0;
 		j = 0;
-		while(b[i][j] != Board.DEFAULT_WHITE_PAWN)
+		while(this.location[i][j] != Board.DEFAULT_WHITE_PAWN)
 		
 		{
 			for(i = 0; i <= 7; i++)
 			{
-				for(int j = 0; j <= 7; j++)
+				for(j = 0; j <= 7; j++)
 				{
 				
 				}
@@ -131,21 +124,19 @@ public class ReversiGame
 			
 		}
 		
-		return false;
+		i = 0;
+		j = 0;
 		
-		
-		
-		
-		/*  We will use this for equality
-		 
-		for(int i = 0; i <= 7; i++)
+		for(i = 0; i <= 7; i++)
 		{
-			for(int j = 0; j <= 7; j++)
+			for(j = 0; j <= 7; j++)
 			{
-				if(b[i][j] == Board.DEFAULT_EMPTY_CASE)
+				if(this.location[i][j] == Board.DEFAULT_EMPTY_CASE)
 					return false;
 			}
 		}
 		
-		*/
+		return true;
+	
 	}
+}

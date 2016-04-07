@@ -1,6 +1,6 @@
 // TODO fix comment (ask for advice)
 /**
- * Game board.
+ * This represents a game board.
  * The board has 64 cells. (8*8)
  * @author grimauce
  *
@@ -29,7 +29,7 @@ public class Board
 	 * This is a board of integers which will be completed only with the constants defined previously.
 	 * 
 	 */
-	private int[][] board;
+	private Location[][] board;
 	
 	
 	/**		
@@ -58,46 +58,25 @@ public class Board
 		
 	}
 
+		public boolean isPawnLocationValid(Location loc)
+		{
+			if(loc!=this.DEFAULT_EMPTY_CASE)
+				return false;
+			return true;
+		}
 	
 	
 	/**
 	 * This method is called when a player ends his turn. It will decide which pawns are wololo and transform them.
+	 * @param location  Define the valid location of the new pawn. This method will add the pawn to the board.
 	 * 
 	 */
-	public static void updateBoard()
+	public static void updateBoard(Location location)
 	{
 		
 	}
 	
-	
-	/**
-	 * This method check if the board have always empty cases and if it remains pawns of the 2 players .
-	 * False  : the game continues
-	 * True : End of the game	 * 
-	 * @grimauce
-	 */
-	public static boolean isGameOver()
-	{
-			
-	}
 
-
-	
-	/**
-	 * Ask to the player to choose a cell to put his pawn.
-	 * @param i
-	 * @param j
-	 * @param player
-	 * @throws CellIsFullException
-	 */
-	public static  askLocation(int i, int j, Player player) throws CellIsFullException
-	{
-		try
-		{
-			this.board[][]
-		}
-	}
-	
 		
 	
 }
