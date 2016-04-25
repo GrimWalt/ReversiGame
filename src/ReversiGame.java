@@ -71,7 +71,7 @@ public class ReversiGame
 	
 			this.board.updateBoard(location);
 			this.isGameOver();
-			Player.switchPlayer();
+			switchPlayer();
 		    }
 }
 
@@ -131,12 +131,21 @@ public class ReversiGame
 		{
 			for(j = 0; j <= 7; j++)
 			{
-				if(this.location[i][j] == Board.DEFAULT_EMPTY_CASE)
+				if(this.board[i][j] == Board.DEFAULT_EMPTY_CASE)
 					return false;
 			}
 		}
 		
 		return true;
 	
+	}
+	
+	/**
+	 * This method is used to end the turn of a player, and to allow the other player to play. 
+	 * @param player
+	 */
+	public void switchPlayer(Player player)
+	{
+		
 	}
 }
