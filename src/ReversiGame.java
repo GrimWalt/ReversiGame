@@ -35,9 +35,6 @@ public class ReversiGame
 		this.blackPlayer = new Player();
 		this.whitePlayer = new Player();		
 	}
-
-	
-
 	
 	/**
 	 * 
@@ -71,9 +68,9 @@ public class ReversiGame
 	
 			this.board.updateBoard(location);
 			this.isGameOver();
-			switchPlayer();
-		    }
-}
+			// switchPlayer();
+		   }
+	}
 
 
 
@@ -82,62 +79,61 @@ public class ReversiGame
 	/**
 	 * Return true when the game is over (false when it continues) :
 	 * The game is over when the board is full or when a player hasn't pawns anymore on the board.
-	 * @param b
-	 * @return
+	 * @return true : Game Over
+	 * false : the game continues
 	 */
 	private boolean isGameOver()
 	{
 		
 
 		
-		
-		int i = 0;
-		int j = 0;
-		while(this.location[i][j] != Board.DEFAULT_BLACK_PAWN)
-			
-		{
-			for(i = 0; i <= 7; i++)
-			{
-				for(j = 0; j <= 7; j++)
-				{
-
-				}
-			}
-			
-			return true;
-		
-		}
-	
-		i = 0;
-		j = 0;
-		while(this.location[i][j] != Board.DEFAULT_WHITE_PAWN)
-		
-		{
-			for(i = 0; i <= 7; i++)
-			{
-				for(j = 0; j <= 7; j++)
-				{
-				
-				}
-			}
-			return true;
-			
-		}
-		
-		i = 0;
-		j = 0;
-		
-		for(i = 0; i <= 7; i++)
-		{
-			for(j = 0; j <= 7; j++)
-			{
-				if(this.board[i][j] == Board.DEFAULT_EMPTY_CASE)
-					return false;
-			}
-		}
+//		
+//		int i = 0;
+//		int j = 0;
+//		while(this.location[i][j] != Board.DEFAULT_BLACK_PAWN)
+//			
+//		{
+//			for(i = 0; i <= 7; i++)
+//			{
+//				for(j = 0; j <= 7; j++)
+//				{
+//
+//				}
+//			}
+//			
+//			return true;
+//		
+//		}
+//	
+//		i = 0;
+//		j = 0;
+//		while(this.location[i][j] != Board.DEFAULT_WHITE_PAWN)
+//		
+//		{
+//			for(i = 0; i <= 7; i++)
+//			{
+//				for(j = 0; j <= 7; j++)
+//				{
+//				
+//				}
+//			}
+//			return true;
+//			
+//		}
+//		
+//		i = 0;
+//		j = 0;
+//		
+//		for(i = 0; i <= 7; i++)
+//		{
+//			for(j = 0; j <= 7; j++)
+//			{
+//				if(this.board[i][j] == Board.DEFAULT_EMPTY_CASE)
+//					return false;
+//			}
+//		}
 		
 		return true;
-	
 	}
 	
 	/**

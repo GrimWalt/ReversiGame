@@ -1,28 +1,42 @@
 /**
  * This represents a location.
+ * consider that only valid, locations can be created (i.e. inside board)
  * @author grimauce
  */
 public class Location
+
 {
+
 	/**
 	 * x represents the x-axis for a location
 	 */
-	private final int x;
+	private int x;
+	
 	/**
 	 * x represents the y-axis for a location
 	 */
-	private final int y;
+	private int y;
 	
 	/**
 	 * Location constructor
 	 * @param abs
 	 * @param ord
 	 */
-	  public Location(int abs, int ord)
+	public Location(int abs, int ord)
 	 
 	{
-		this.x = abs;
-		this.y = ord;
+	
+		try
+		{
+			this.x = abs;
+			this.y = ord;
+		}
+		
+		catch (ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println("Array index out of bounds");
+		}
+		
 	}
 
 	/**

@@ -15,4 +15,5 @@ public class Main
 	{
 		new ReversiGame().play();
 	}
+	
 }
