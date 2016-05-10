@@ -1,3 +1,4 @@
+// TODO rename class (PlayerInput)
 /**
  * This represents a player.
  * 

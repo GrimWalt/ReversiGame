@@ -13,8 +13,6 @@ public class Board
 	 */
 	private static final int MAX_DIMENSION = 8;
 
-	
-
 	/**
 	 * This constant define the state of each cell owned by the white player.
 	 */
@@ -42,28 +40,29 @@ public class Board
 	 */
 	public Board()
 	{
-	
+
 		for (int rowIndex = 0; rowIndex < MAX_DIMENSION; rowIndex++)
 			for (int columnIndex = 0; columnIndex < MAX_DIMENSION; columnIndex++)
 				this.board[rowIndex][columnIndex] = EMPTY;
-		
+
 		this.board[3][3] = BLACK_PAWN;
 		this.board[3][4] = WHITE_PAWN;
 		this.board[4][3] = WHITE_PAWN;
 		this.board[4][4] = BLACK_PAWN;
 
 	}
-	
+
 	/**
 	 * getter for MAX_DIMENSION
+	 * 
 	 * @return the number of columns and rows.
 	 */
 	public static int getMaxDimension()
 	{
 		return MAX_DIMENSION;
 	}
-	
-	// TODO add the other condition
+
+	// TODO finish writing comment
 	/**
 	 * 
 	 * @param loc
@@ -76,7 +75,7 @@ public class Board
 			if (this.board[loc.getX()][loc.getY()] != Board.EMPTY)
 				return false;
 		}
-		
+
 		catch (ArrayIndexOutOfBoundsException e)
 		{
 			return false;
@@ -98,16 +97,17 @@ public class Board
 
 	}
 
-	//TODO code this method
-		/**
-		 * This method is used for print the board on the screen.
-		 * @param board The board which the game is played.
-		 */
+	/**
+	 * This method is used for print the board on the screen.
+	 * 
+	 * @param board
+	 *            The board which the game is played.
+	 */
 
 	@Override
 	public String toString()
 	{
 		return "Board [board=" + Arrays.toString(board) + "]";
 	}
-	
+
 }
