@@ -7,23 +7,31 @@
  * @author grimauce
  */
 public class ReversiGame
+
 {
 	/**
 	 *  This represents the board.
 	 */
+		
 	private Board board;
-	
 	
 	/**
 	 * This represents the black player.
 	 */
-	private Player blackPlayer;
+	private PlayerInput blackPlayer;
    
 
 	/**
 	 * This represents the white player
 	 */
-	private Player whitePlayer;
+	private PlayerInput whitePlayer;
+
+
+
+
+	
+
+	
 
 	/**
 	 * Creates a new Reversi game, ready to begin (board in starting configuration, 2 players)
@@ -32,8 +40,8 @@ public class ReversiGame
 	public ReversiGame()
 	{
 		this.board = new Board();
-		this.blackPlayer = new Player();
-		this.whitePlayer = new Player();		
+		this.blackPlayer = new PlayerInput();
+		this.whitePlayer = new PlayerInput();		
 	}
 	
 	/**
@@ -54,22 +62,26 @@ public class ReversiGame
 	 */
 	public void play()
 	{
-		Player currentPlayer = this.blackPlayer;
+		PlayerInput currentPlayer = this.blackPlayer;
 		
 		while(!this.isGameOver())
 		{
-			Location location = null;
+			if (Board.isPlayerAble(currentPlayer))
 			
-			do
 			{
-				location = currentPlayer.askLocation();
-			}
-			while(!this.board.isPawnLocationValid(location));
+				Location location = null;
+			
+				do
+				{
+					location = currentPlayer.askLocation();
+				}
+				while(!this.board.isPawnLocationValid(location));
 	
-			this.board.updateBoard(location);
-			this.isGameOver();
-			// switchPlayer();
-		   }
+				this.board.updateBoard(location);
+			}
+			
+			switchPlayer(currentPlayer);
+		}
 	}
 
 
@@ -87,51 +99,51 @@ public class ReversiGame
 		
 
 		
-//		
-//		int i = 0;
-//		int j = 0;
-//		while(this.location[i][j] != Board.DEFAULT_BLACK_PAWN)
-//			
-//		{
-//			for(i = 0; i <= 7; i++)
-//			{
-//				for(j = 0; j <= 7; j++)
-//				{
-//
-//				}
-//			}
-//			
-//			return true;
-//		
-//		}
-//	
-//		i = 0;
-//		j = 0;
-//		while(this.location[i][j] != Board.DEFAULT_WHITE_PAWN)
-//		
-//		{
-//			for(i = 0; i <= 7; i++)
-//			{
-//				for(j = 0; j <= 7; j++)
-//				{
-//				
-//				}
-//			}
-//			return true;
-//			
-//		}
-//		
-//		i = 0;
-//		j = 0;
-//		
-//		for(i = 0; i <= 7; i++)
-//		{
-//			for(j = 0; j <= 7; j++)
-//			{
-//				if(this.board[i][j] == Board.DEFAULT_EMPTY_CASE)
-//					return false;
-//			}
-//		}
+		
+		int i = 0;
+		int j = 0;
+		while(this.board[i][j] != Board.BLACK_PAWN)
+			
+		{
+			for(i = 0; i < Board.MAX_DIMENSION; i++)
+			{
+				for(j = 0; j < Board.MAX_DIMENSION; j++)
+				{
+
+				}
+			}
+			
+			return true;
+		
+		}
+	
+		i = 0;
+		j = 0;
+		while(this.location[i][j] != Board.WHITE_PAWN)
+		
+		{
+			for(i = 0; i < Board.MAX_DIMENSION; i++)
+			{
+				for(j = 0; j < Board.MAX_DIMENSION; j++)
+				{
+				
+				}
+			}
+			return true;
+			
+		}
+		
+		i = 0;
+		j = 0;
+		
+		for(i = 0; i < Board.MAX_DIMENSION; i++)
+		{
+			for(j = 0; j < Board.MAX_DIMENSION; j++)
+			{
+				if(this.board.location[i][j] == Board.EMPTY)
+					return false;
+			}
+		}
 		
 		return true;
 	}
@@ -140,7 +152,7 @@ public class ReversiGame
 	 * This method is used to end the turn of a player, and to allow the other player to play. 
 	 * @param player
 	 */
-	public void switchPlayer(Player player)
+	public void switchPlayer(PlayerInput player)
 	{
 		
 	}

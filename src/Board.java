@@ -11,7 +11,7 @@ public class Board
 	/**
 	 * Define the number of columns and rows of the board.
 	 */
-	private static final int MAX_DIMENSION = 8;
+	public static final int MAX_DIMENSION = 8;
 
 	/**
 	 * This constant define the state of each cell owned by the white player.
@@ -34,6 +34,7 @@ public class Board
 	 * 
 	 */
 	private int board[][];
+
 
 	/**
 	 * Creates a new board, in starting configuration
@@ -108,6 +109,13 @@ public class Board
 	public String toString()
 	{
 		return "Board [board=" + Arrays.toString(board) + "]";
+	}
+	
+	
+	public boolean isPlayerAble(PlayerInput player)
+	{
+		
+		 return true;
 	}
 
 }
