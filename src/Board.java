@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  * This represents a game board. The board has 64 cells. (8*8)
@@ -93,9 +94,12 @@ public class Board
 	 *            Define the valid location of the new pawn. This method will
 	 *            add the pawn to the board.
 	 */
-	public void updateBoard(Location loc)
+	public void updateBoard(Location loc, PlayerInput player)
 	{
-
+		int x = loc.getX();
+		int y = loc.getY();
+		
+		if(PlayerInput.currentPlayer == whitePlayer)
 	}
 
 	/**
@@ -111,11 +115,5 @@ public class Board
 		return "Board [board=" + Arrays.toString(board) + "]";
 	}
 	
-	
-	public boolean isPlayerAble(PlayerInput player)
-	{
-		
-		 return true;
-	}
 
 }

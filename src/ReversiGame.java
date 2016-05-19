@@ -17,12 +17,14 @@ public class ReversiGame
 	
 	/**
 	 * This represents the black player.
+	 * He's define by false.
 	 */
 	private PlayerInput blackPlayer;
-   
+	  
 
 	/**
 	 * This represents the white player
+	 * He's define by true.
 	 */
 	private PlayerInput whitePlayer;
 
@@ -62,23 +64,24 @@ public class ReversiGame
 	 */
 	public void play()
 	{
+		whitePlayer.setCurrentPlayer(true);
+		
 		PlayerInput currentPlayer = this.blackPlayer;
 		
 		while(!this.isGameOver())
 		{
-			if (Board.isPlayerAble(currentPlayer))
-			
-			{
 				Location location = null;
 			
 				do
 				{
 					location = currentPlayer.askLocation();
+					if(location==null)
+						break;
 				}
 				while(!this.board.isPawnLocationValid(location));
-	
-				this.board.updateBoard(location);
-			}
+				if(location!=null)
+					this.board.updateBoard(location, currentPlayer);
+			
 			
 			switchPlayer(currentPlayer);
 		}
