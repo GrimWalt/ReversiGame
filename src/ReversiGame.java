@@ -17,14 +17,12 @@ public class ReversiGame
 	
 	/**
 	 * This represents the black player.
-	 * He's define by false.
 	 */
 	private PlayerInput blackPlayer;
 	  
 
 	/**
 	 * This represents the white player
-	 * He's define by true.
 	 */
 	private PlayerInput whitePlayer;
 
@@ -158,5 +156,23 @@ public class ReversiGame
 	public void switchPlayer(PlayerInput player)
 	{
 		
+	}
+	
+	/**
+	 * getter for whitePlayer
+	 * @return whitePlayer
+	 */
+	public PlayerInput getWhitePlayer()
+	{
+		return this.whitePlayer;
+	}
+	
+	/**
+	 * getter for blackPlayer
+	 * @return blackPplayer
+	 */
+	public PlayerInput getBlackPlayer()
+	{
+		return this.blackPlayer;
 	}
 }

@@ -13,6 +13,11 @@ public class Board
 	 * Define the number of columns and rows of the board.
 	 */
 	public static final int MAX_DIMENSION = 8;
+	
+	/**
+	 * Define the border of the board.
+	 */
+	public static final int MIN_DIMENSION = 0;
 
 	/**
 	 * This constant define the state of each cell owned by the white player.
@@ -94,19 +99,453 @@ public class Board
 	 *            Define the valid location of the new pawn. This method will
 	 *            add the pawn to the board.
 	 */
-	public void updateBoard(Location loc, PlayerInput player)
+	public void updateBoard(Location loc)
 	{
+		int pawnCounter = 0;
 		int x = loc.getX();
 		int y = loc.getY();
 		
-		if(PlayerInput.currentPlayer == whitePlayer)
+		
+		//for the white player
+		if(getWhitePlayer().getCurrentPlayerState() == true )
+		{
+			
+			pawnCounter = 0;
+			while (this.board[x][y] != WHITE_PAWN)
+			{
+				
+				x--;
+				if(this.board[x][y] == EMPTY)
+					break;
+				else if(x<MIN_DIMENSION)
+					break;
+				else
+				pawnCounter++;
+			}
+			if(pawnCounter < 0)
+			{
+				for(int i = 0; i<=pawnCounter;i++)
+				{
+					x++;
+					this.board[x][y] = WHITE_PAWN;
+				}
+			}
+			
+			// roadtrip of the x axis (forward)
+			
+			x = loc.getX();
+			y = loc.getY();
+			pawnCounter = 0;
+			
+			while (this.board[x][y] != WHITE_PAWN)
+			{
+				
+				x++;
+				if(this.board[x][y] == EMPTY)
+					break;
+				else if(x>MAX_DIMENSION)
+					break;
+				else
+				pawnCounter++;
+			}
+			if(pawnCounter < 0)
+			{
+				for(int i = 0; i<=pawnCounter;i++)
+				{
+					x--;
+					this.board[x][y] = WHITE_PAWN;
+				}
+			}
+			
+			// roadtrip of the y axis (forward)
+			
+			x = loc.getX();
+			y = loc.getY();
+			pawnCounter = 0;
+			
+			while (this.board[x][y] != WHITE_PAWN)
+			{
+				
+				y++;
+				if(this.board[x][y] == EMPTY)
+					break;
+				else if(y>MAX_DIMENSION)
+					break;
+				else
+				pawnCounter++;
+			}
+			if(pawnCounter < 0)
+			{
+				for(int i = 0; i<=pawnCounter;i++)
+				{
+					y--;
+					this.board[x][y] = WHITE_PAWN;
+				}
+			}
+			
+			// roadtrip of the y axis (backward)
+			x = loc.getX();
+			y = loc.getY();
+			pawnCounter = 0;
+			
+			while (this.board[x][y] != WHITE_PAWN)
+			{
+				
+				y--;
+				if(this.board[x][y] == EMPTY)
+					break;
+				else if(y<MIN_DIMENSION)
+					break;
+				else
+				pawnCounter++;
+			}
+			if(pawnCounter < 0)
+			{
+				for(int i = 0; i<=pawnCounter;i++)
+				{
+					y++;
+					this.board[x][y] = WHITE_PAWN;
+				}
+			}
+			
+			// roadtrip of the x=y axis (backward)
+			
+			x = loc.getX();
+			y = loc.getY();
+			pawnCounter = 0;
+			
+			while (this.board[x][y] != WHITE_PAWN)
+			{
+				
+				y--;
+				x--;
+				if(this.board[x][y] == EMPTY)
+					break;
+				else if(y<MIN_DIMENSION || x<MIN_DIMENSION)
+					break;
+				else
+				pawnCounter++;
+			}
+			if(pawnCounter < 0)
+			{
+				for(int i = 0; i<=pawnCounter;i++)
+				{
+					y++;
+					x++;
+					this.board[x][y] = WHITE_PAWN;
+				}
+			}
+			
+			// roadtrip of the x=y axis (forward)
+			
+			x = loc.getX();
+			y = loc.getY();
+			pawnCounter = 0;
+			
+			while (this.board[x][y] != WHITE_PAWN)
+			{
+				
+				y++;
+				x++;
+				if(this.board[x][y] == EMPTY)
+					break;
+				else if(y>MAX_DIMENSION || x>MAX_DIMENSION)
+					break;
+				else
+				pawnCounter++;
+			}
+			if(pawnCounter < 0)
+			{
+				for(int i = 0; i<=pawnCounter;i++)
+				{
+					y--;
+					x--;
+					this.board[x][y] = WHITE_PAWN;
+				}
+			}
+			
+			// roadtrip of the -x=y axis (backward)
+			
+			x = loc.getX();
+			y = loc.getY();
+			pawnCounter = 0;
+			
+			while (this.board[x][y] != WHITE_PAWN)
+			{
+				
+				y++;
+				x--;
+				if(this.board[x][y] == EMPTY)
+					break;
+				else if(y>MAX_DIMENSION || x<MIN_DIMENSION)
+					break;
+				else
+				pawnCounter++;
+			}
+			if(pawnCounter < 0)
+			{
+				for(int i = 0; i<=pawnCounter;i++)
+				{
+					y--;
+					x++;
+					this.board[x][y] = WHITE_PAWN;
+				}
+			}
+			
+			// roadtrip of the -x=y axis (forward)
+			
+			x = loc.getX();
+			y = loc.getY();
+			pawnCounter = 0;
+			
+			while (this.board[x][y] != WHITE_PAWN)
+			{
+				
+				y--;
+				x++;
+				if(this.board[x][y] == EMPTY)
+					break;
+				else if(y<MIN_DIMENSION || x>MAX_DIMENSION)
+					break;
+				else
+				pawnCounter++;
+			}
+			if(pawnCounter < 0)
+			{
+				for(int i = 0; i<=pawnCounter;i++)
+				{
+					y++;
+					x--;
+					this.board[x][y] = WHITE_PAWN;
+				}
+			
+			}			
+			
+		}
+		
+		//for the black player
+				if(getBlackPlayer().getCurrentPlayerState() == true )
+				{
+					
+					pawnCounter = 0;
+					while (this.board[x][y] != BLACK_PAWN)
+					{
+						
+						x--;
+						if(this.board[x][y] == EMPTY)
+							break;
+						else if(x<MIN_DIMENSION)
+							break;
+						else
+						pawnCounter++;
+					}
+					if(pawnCounter < 0)
+					{
+						for(int i = 0; i<=pawnCounter;i++)
+						{
+							x++;
+							this.board[x][y] = BLACK_PAWN;
+						}
+					}
+					
+					// roadtrip of the x axis (forward)
+					
+					x = loc.getX();
+					y = loc.getY();
+					pawnCounter = 0;
+					
+					while (this.board[x][y] !=BLACK_PAWN)
+					{
+						
+						x++;
+						if(this.board[x][y] == EMPTY)
+							break;
+						else if(x>MAX_DIMENSION)
+							break;
+						else
+						pawnCounter++;
+					}
+					if(pawnCounter < 0)
+					{
+						for(int i = 0; i<=pawnCounter;i++)
+						{
+							x--;
+							this.board[x][y] = BLACK_PAWN;
+						}
+					}
+					
+					// roadtrip of the y axis (forward)
+					
+					x = loc.getX();
+					y = loc.getY();
+					pawnCounter = 0;
+					
+					while (this.board[x][y] != BLACK_PAWN)
+					{
+						
+						y++;
+						if(this.board[x][y] == EMPTY)
+							break;
+						else if(y>MAX_DIMENSION)
+							break;
+						else
+						pawnCounter++;
+					}
+					if(pawnCounter < 0)
+					{
+						for(int i = 0; i<=pawnCounter;i++)
+						{
+							y--;
+							this.board[x][y] = BLACK_PAWN;
+						}
+					}
+					
+					// roadtrip of the y axis (backward)
+					x = loc.getX();
+					y = loc.getY();
+					pawnCounter = 0;
+					
+					while (this.board[x][y] != BLACK_PAWN)
+					{
+						
+						y--;
+						if(this.board[x][y] == EMPTY)
+							break;
+						else if(y<MIN_DIMENSION)
+							break;
+						else
+						pawnCounter++;
+					}
+					if(pawnCounter < 0)
+					{
+						for(int i = 0; i<=pawnCounter;i++)
+						{
+							y++;
+							this.board[x][y] = BLACK_PAWN;
+						}
+					}
+					
+					// roadtrip of the x=y axis (backward)
+					
+					x = loc.getX();
+					y = loc.getY();
+					pawnCounter = 0;
+					
+					while (this.board[x][y] != BLACK_PAWN)
+					{
+						
+						y--;
+						x--;
+						if(this.board[x][y] == EMPTY)
+							break;
+						else if(y<MIN_DIMENSION || x<MIN_DIMENSION)
+							break;
+						else
+						pawnCounter++;
+					}
+					if(pawnCounter < 0)
+					{
+						for(int i = 0; i<=pawnCounter;i++)
+						{
+							y++;
+							x++;
+							this.board[x][y] = BLACK_PAWN;
+						}
+					}
+					
+					// roadtrip of the x=y axis (forward)
+					
+					x = loc.getX();
+					y = loc.getY();
+					pawnCounter = 0;
+					
+					while (this.board[x][y] != BLACK_PAWN)
+					{
+						
+						y++;
+						x++;
+						if(this.board[x][y] == EMPTY)
+							break;
+						else if(y>MAX_DIMENSION || x>MAX_DIMENSION)
+							break;
+						else
+						pawnCounter++;
+					}
+					if(pawnCounter < 0)
+					{
+						for(int i = 0; i<=pawnCounter;i++)
+						{
+							y--;
+							x--;
+							this.board[x][y] = BLACK_PAWN;
+						}
+					}
+					
+					// roadtrip of the -x=y axis (backward)
+					
+					x = loc.getX();
+					y = loc.getY();
+					pawnCounter = 0;
+					
+					while (this.board[x][y] != BLACK_PAWN)
+					{
+						
+						y++;
+						x--;
+						if(this.board[x][y] == EMPTY)
+							break;
+						else if(y>MAX_DIMENSION || x<MIN_DIMENSION)
+							break;
+						else
+						pawnCounter++;
+					}
+					if(pawnCounter < 0)
+					{
+						for(int i = 0; i<=pawnCounter;i++)
+						{
+							y--;
+							x++;
+							this.board[x][y] = BLACK_PAWN;
+						}
+					}
+					
+					// roadtrip of the -x=y axis (forward)
+					
+					x = loc.getX();
+					y = loc.getY();
+					pawnCounter = 0;
+					
+					while (this.board[x][y] != BLACK_PAWN)
+					{
+						
+						y--;
+						x++;
+						if(this.board[x][y] == EMPTY)
+							break;
+						else if(y<MIN_DIMENSION || x>MAX_DIMENSION)
+							break;
+						else
+						pawnCounter++;
+					}
+					if(pawnCounter < 0)
+					{
+						for(int i = 0; i<=pawnCounter;i++)
+						{
+							y++;
+							x--;
+							this.board[x][y] = BLACK_PAWN;
+						}
+					
+					}			
+					
+				}
 	}
 
 	/**
 	 * This method is used for print the board on the screen.
 	 * 
 	 * @param board
-	 *            The board which the game is played.
+	 * The board which the game is played.
 	 */
 
 	@Override

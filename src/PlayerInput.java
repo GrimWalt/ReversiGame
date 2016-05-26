@@ -10,7 +10,7 @@ public class PlayerInput
 	/**
 	 * 
 	 */
-	private boolean currentPlayer;
+	boolean currentPlayerState;
 	
 	/**
 	 * Setter for currentPlayer
@@ -18,16 +18,16 @@ public class PlayerInput
 	 */
 	public void setCurrentPlayer(boolean currentPlayer)
 	{
-		this.currentPlayer = currentPlayer;
+		this.currentPlayerState = currentPlayer;
 	}
 
 	/**
 	 * getter  for currentPlayer
 	 * @return currentPlayer
 	 */
-	public boolean getCurrentPlayer()
+	public boolean getCurrentPlayerState()
 	{
-		return this.currentPlayer;
+		return this.currentPlayerState;
 	}
 
 	/**
@@ -35,7 +35,7 @@ public class PlayerInput
  	*/
 	public PlayerInput()
 	{
-		this.currentPlayer = false; 
+		this.currentPlayerState = false; 
 	}
 	
 	/**
